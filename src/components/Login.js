@@ -50,7 +50,7 @@ const Login = () => {
                 <div className="field">
                     <label htmlFor="password">Password</label>
                     <input
-                        type="text"
+                        type="password"
                         id="password"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}

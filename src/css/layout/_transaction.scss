@@ -1,0 +1,28 @@
+.transaction-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.transaction {
+    @include grid(3, 1rem);
+    align-items: center;
+    justify-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+
+    .category {
+        text-transform: capitalize;
+    }
+
+    .ammount {
+        font-weight: bold;
+    }
+}
+
+.income {
+    background-color: lighten($incomeColor, 10);
+}
+
+.spends {
+    background-color: lighten($spendsColor, 10);
+}

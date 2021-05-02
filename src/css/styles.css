@@ -379,7 +379,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  text-align: center;
 }
 
 img {
@@ -499,6 +499,10 @@ ul {
         -ms-flex-align: center;
             align-items: center;
   }
+}
+
+.balance h2 {
+  font-size: 3rem;
 }
 
 nav {
@@ -718,5 +722,40 @@ nav .nav .logout:hover {
   50% {
     opacity: 0.5;
   }
+}
+
+.transaction-container {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.transaction {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.transaction .category {
+  text-transform: capitalize;
+}
+
+.transaction .ammount {
+  font-weight: bold;
+}
+
+.income {
+  background-color: #3de4b8;
+}
+
+.spends {
+  background-color: #f38081;
 }
 /*# sourceMappingURL=styles.css.map */
