@@ -2,10 +2,12 @@ import React, { useContext } from "react";
 import { Link} from "react-router-dom";
 import { UserContext } from "../context/userContext";
 import "../css/styles.css";
+import Loader from "./Loader";
 
 const Home = () => {
-    const { user } = useContext(UserContext);
+    const { user, loading } = useContext(UserContext);
 
+    if(loading) return <Loader />
     if(!user) return(
         <main className="container grid">
             <div className="svg">
