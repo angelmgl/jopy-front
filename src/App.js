@@ -1,9 +1,13 @@
+import React from "react";
+import Home from "./components/Home";
+import { UserProvider } from "./context/userContext";
+
 function App() {
-  return (
-    <div className="App">
-      <h1>Welcome to jopy</h1>
-    </div>
-  );
+    return (
+        <UserProvider>
+            <Home />
+        </UserProvider>
+    );
 }
 
 export default App;
