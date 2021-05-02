@@ -20,7 +20,7 @@ export const UserProvider = ({ children }) => {
         if(token) {
             fetchUser();
         }
-    }, [])
+    }, [token]);
 
     return(
         <UserContext.Provider value={{token, setToken, user, setUser}}>

@@ -1,0 +1,14 @@
+nav {
+    background-color: $primaryColor;
+    color: white;
+    font-weight: bold;
+
+    .nav {
+        @include flex(row);
+
+        .logo {
+            display: inline-block;
+            width: 75px;
+        }
+    }
+}

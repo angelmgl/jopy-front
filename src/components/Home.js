@@ -6,9 +6,9 @@ import "../css/styles.css";
 const Home = () => {
     const { user } = useContext(UserContext);
 
-    return(
+    if(!user) return(
         <main className="container main">
-            <div class="svg">
+            <div className="svg">
                 <h2>Manage your budget in an easier way!</h2>
                 <img src="/img/savings.svg" alt="Savings" />
             </div>
