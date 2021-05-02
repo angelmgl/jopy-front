@@ -1,7 +1,9 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 import { UserProvider } from "./context/userContext";
 
 function App() {
@@ -9,7 +11,11 @@ function App() {
         <UserProvider>
             <BrowserRouter>
                 <Nav />
-                <Home />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/signup" component={Signup} />
+                </Switch>
             </BrowserRouter>
         </UserProvider>
     );

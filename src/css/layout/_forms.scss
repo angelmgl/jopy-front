@@ -1,0 +1,41 @@
+.signup-form {
+    width: 100%;
+    max-width: 500px;
+    @include flex(column);
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+
+    button {
+        margin-top: 1rem;
+    }
+
+    .error {
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 0.8rem;
+        background-color: $spendsColor;
+        border-radius: 0.5rem;
+    }
+}
+
+.field {
+    width: 100%;
+    padding: 0.5rem 0;
+    @include flex(column);
+
+    label {
+        padding-left: 1rem;
+        margin-bottom: 0.25rem;
+        align-self: flex-start;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 1rem;
+        outline: none;
+    }
+}
