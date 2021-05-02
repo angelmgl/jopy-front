@@ -10,5 +10,16 @@ nav {
             display: inline-block;
             width: 75px;
         }
+
+        .logout {
+            font-size: 3rem;
+            margin-left: auto;
+            cursor: pointer;
+            transition: all 0.4s;
+
+            &:hover {
+                color: #f0f0f0;
+            }
+        }
     }
 }

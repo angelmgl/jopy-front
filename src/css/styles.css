@@ -528,6 +528,18 @@ nav .nav .logo {
   width: 75px;
 }
 
+nav .nav .logout {
+  font-size: 3rem;
+  margin-left: auto;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+nav .nav .logout:hover {
+  color: #f0f0f0;
+}
+
 .auth-form {
   width: 100%;
   max-width: 500px;
