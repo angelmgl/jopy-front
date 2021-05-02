@@ -8,7 +8,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
 
-    const { user, token, setUser, setToken } = useContext(UserContext);
+    const { user, setUser, setToken } = useContext(UserContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();

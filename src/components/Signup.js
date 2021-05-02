@@ -9,14 +9,25 @@ const Signup = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [match, setMatch] = useState(true);
+    const [message, setMessage] = useState("");
 
-    const { user } = useContext(UserContext);
+    const { user, setUser, setToken } = useContext(UserContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        postData();
     };
 
-    const postData = async () => {};
+    const postData = async () => {
+        try {
+            const res = await axios.post("/auth/signup", {fullname, username, password});
+            setUser(res.data.fullname);
+            setToken(res.data.token);
+            localStorage.setItem("token", res.data.token);
+        } catch (error) {
+            setMessage(error.response.data.message);
+        }
+    };
 
     if (user) return <Redirect to="/" />;
     return (
@@ -75,6 +86,7 @@ const Signup = () => {
                 </div>
 
                 {match ? "" : <p className="error">Passwords does'nt match!</p>}
+                {message ? <p className="error">{message}</p> : ""}
 
                 {match ? (
                     <button type="submit" className="btn btn-primary">
