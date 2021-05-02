@@ -1,0 +1,31 @@
+/** Media Queries **/
+@mixin mobile {
+    @media (min-width: 370px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1144px) {
+        @content;
+    }
+}
+
+@mixin grid($cols, $gap) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $gap;
+}
+
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
