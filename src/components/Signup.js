@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../context/userContext";
 import "../css/styles.css";
@@ -23,9 +23,9 @@ const Signup = () => {
         <section className="container grid">
             <div className="svg">
                 <h2>Sign Up for free!</h2>
-                <img src="/img/signup.svg" alt="Savings" />
+                <img src="/img/signup.svg" alt="Signup" />
             </div>
-            <form onSubmit={handleSubmit} className="signup-form">
+            <form onSubmit={handleSubmit} className="auth-form">
                 <h2>Register form</h2>
                 <div className="field">
                     <label htmlFor="fullname">Full Name</label>
@@ -85,6 +85,7 @@ const Signup = () => {
                         Sign up!
                     </button>
                 )}
+                <p>If you already have an account you can <Link to="/login">login here.</Link></p>
             </form>
         </section>
     );

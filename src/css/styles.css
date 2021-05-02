@@ -528,7 +528,7 @@ nav .nav .logo {
   width: 75px;
 }
 
-.signup-form {
+.auth-form {
   width: 100%;
   max-width: 500px;
   display: -webkit-box;
@@ -550,11 +550,11 @@ nav .nav .logo {
   border-radius: 1rem;
 }
 
-.signup-form button {
+.auth-form button {
   margin-top: 1rem;
 }
 
-.signup-form .error {
+.auth-form .error {
   width: 100%;
   padding: 0.5rem 0;
   font-size: 0.8rem;
