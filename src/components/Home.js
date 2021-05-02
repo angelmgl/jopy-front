@@ -23,6 +23,10 @@ const Home = () => {
             </div>
         </main>
     );
+
+    return(
+        <h1>welcome {user}</h1>
+    )
 }
 
 export default Home;

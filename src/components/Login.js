@@ -6,14 +6,25 @@ import { UserContext } from "../context/userContext";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
 
-    const { user } = useContext(UserContext);
+    const { user, token, setUser, setToken } = useContext(UserContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        login();
     }
 
-    const login = async () => {}
+    const login = async () => {
+        try {
+            const res = await axios.post("/auth/login", {username, password});
+            setUser(res.data.fullname);
+            setToken(res.data.token);
+            localStorage.setItem("token", res.data.token);
+        } catch (error) {
+            setMessage(error.response.data.message);
+        }
+    }
 
     if (user) return <Redirect to="/" />;
     return (
@@ -48,6 +59,11 @@ const Login = () => {
                         required
                     />
                 </div>
+                {
+                    message 
+                    ? <p className="error">{message}</p>
+                    : ""
+                }
                 <button type="submit" className="btn btn-primary">
                     Login!
                 </button>

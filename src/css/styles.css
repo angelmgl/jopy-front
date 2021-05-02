@@ -550,10 +550,6 @@ nav .nav .logo {
   border-radius: 1rem;
 }
 
-.auth-form button {
-  margin-top: 1rem;
-}
-
 .auth-form .error {
   width: 100%;
   padding: 0.5rem 0;
