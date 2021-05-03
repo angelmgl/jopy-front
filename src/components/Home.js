@@ -55,6 +55,7 @@ const Home = () => {
 
     return (
         <main className="container">
+            <h1>Welcome {user}</h1>
             <section className="balance">
                 <h2>
                     Your latest balance: <span>{total} $</span>

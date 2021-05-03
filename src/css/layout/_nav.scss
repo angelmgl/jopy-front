@@ -1,25 +1,127 @@
-nav {
-    background-color: $primaryColor;
-    color: white;
-    font-weight: bold;
+header {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    .nav {
-        @include flex(row);
-
-        .logo {
-            display: inline-block;
-            width: 75px;
+        @include tablet {
+            justify-content: space-between;
         }
 
-        .logout {
-            font-size: 2.5rem;
-            margin-left: auto;
-            cursor: pointer;
+        .logo {
+            width: 75px;
+        }
+    }
+}
+
+nav {
+    width: auto;
+    height: 100%;
+
+    .nav-btn {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        z-index: 9;
+
+        li {
+            padding: 10px 25px;
             transition: all 0.4s;
 
             &:hover {
                 color: #f0f0f0;
             }
+
+            a {
+                color: white;
+                font-size: 2em;
+            }
         }
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    nav .nav-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        box-shadow: 5px 5px 15px rgba(255,255,255,.7);
+        background-color: $primaryColor;
+        cursor: pointer;
+        z-index: 999;
+
+        &:hover {
+            background-color: darken($primaryColor, 10);
+        }
+
+        .nav-icon {
+            font-size: 2em;
+            color: white;
+        }
+    }
+
+    nav .nav-links {
+        position: fixed;
+        background-color: $primaryColor;
+        margin: 0;
+        height: 100vh;
+        width: 100%;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease-out;
+        z-index: 500;
+        clip-path: circle(0px at 85% 92%);
+        -webkit-clip-path: circle(0px at 85% 92%);
+        pointer-events: none;
+    }
+
+    nav .nav-links.active {
+        clip-path: circle(1000px at 85% 92%);
+        -webkit-clip-path: circle(1000px at 85% 92%);
+        pointer-events: all;
+    }
+
+    nav .nav-links li {
+        opacity: 0;
+    }
+
+    nav .nav-links li:nth-child(1) {
+        transition: all 0.4s ease 0.4s;
+    }
+    
+    nav .nav-links li:nth-child(2) {
+        transition: all 0.4s ease 0.2s;
+    }
+
+    nav .nav-links li.open {
+        opacity: 1;
+    }
+}
+
+.logout {
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken(#fff, 10);
     }
 }
