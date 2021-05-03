@@ -20,7 +20,7 @@ const Transaction = ({
         <p className="ammount">
             {type === "income" ? `+${ammount} $` : `-${ammount} $`}
             <Link to={`/transaction/${id}`}>
-                <FaEdit />
+                <FaEdit className="edit-icon" />
             </Link>
         </p>
     </div>

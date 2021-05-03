@@ -889,6 +889,11 @@ nav .nav-links li a {
   font-weight: bold;
 }
 
+.transaction .ammount .edit-icon {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
 .income {
   background-color: #3de4b8;
 }
@@ -903,5 +908,16 @@ nav .nav-links li a {
 
 .spends:hover {
   background-color: #ee5253;
+}
+
+.delete {
+  color: #fff;
+}
+
+.success {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: #1dd1a1;
 }
 /*# sourceMappingURL=styles.css.map */

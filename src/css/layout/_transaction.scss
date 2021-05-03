@@ -22,6 +22,11 @@
         justify-content: space-between;
         align-items: center;
         font-weight: bold;
+
+        .edit-icon {
+            color: #fff;
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -39,4 +44,15 @@
     &:hover {
         background-color: $spendsColor;
     }
+}
+
+.delete {
+    color: #fff;
+}
+
+.success {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: $incomeColor;
 }
