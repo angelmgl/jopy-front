@@ -36,7 +36,7 @@ const Signup = () => {
                 <h2>Sign Up for free!</h2>
                 <img src="/img/signup.svg" alt="Signup" />
             </div>
-            <form onSubmit={handleSubmit} className="auth-form">
+            <form onSubmit={handleSubmit} className="form">
                 <h2>Register form</h2>
                 <div className="field">
                     <label htmlFor="fullname">Full Name</label>

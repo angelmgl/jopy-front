@@ -33,7 +33,7 @@ const Login = () => {
                 <h2>Login into your account!</h2>
                 <img src="/img/login.svg" alt="Login" />
             </div>
-            <form onSubmit={handleSubmit} className="auth-form">
+            <form onSubmit={handleSubmit} className="form">
                 <h2>Login Form</h2>
                 <div className="field">
                     <label htmlFor="username">Username</label>

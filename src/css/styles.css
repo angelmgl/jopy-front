@@ -544,7 +544,7 @@ nav .nav .logout:hover {
   color: #f0f0f0;
 }
 
-.auth-form {
+.form {
   width: 100%;
   max-width: 500px;
   display: -webkit-box;
@@ -566,7 +566,7 @@ nav .nav .logout:hover {
   border-radius: 1rem;
 }
 
-.auth-form .error {
+.form .error {
   width: 100%;
   padding: 0.5rem 0;
   font-size: 0.8rem;
@@ -605,6 +605,11 @@ nav .nav .logout:hover {
   border: 1px solid #ddd;
   border-radius: 1rem;
   outline: none;
+}
+
+.field select {
+  width: 100%;
+  padding: 0.25rem 1rem;
 }
 
 .loader {
@@ -741,6 +746,7 @@ nav .nav .logout:hover {
   justify-items: center;
   padding: 0.5rem 0;
   border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .transaction .category {
@@ -755,7 +761,15 @@ nav .nav .logout:hover {
   background-color: #3de4b8;
 }
 
+.income:hover {
+  background-color: #1dd1a1;
+}
+
 .spends {
   background-color: #f38081;
+}
+
+.spends:hover {
+  background-color: #ee5253;
 }
 /*# sourceMappingURL=styles.css.map */

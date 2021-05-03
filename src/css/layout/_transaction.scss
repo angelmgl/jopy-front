@@ -9,6 +9,7 @@
     justify-items: center;
     padding: 0.5rem 0;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
 
     .category {
         text-transform: capitalize;
@@ -21,8 +22,16 @@
 
 .income {
     background-color: lighten($incomeColor, 10);
+
+    &:hover {
+        background-color: $incomeColor;
+    }
 }
 
 .spends {
     background-color: lighten($spendsColor, 10);
+
+    &:hover {
+        background-color: $spendsColor;
+    }
 }

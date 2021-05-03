@@ -1,4 +1,4 @@
-.auth-form {
+.form {
     width: 100%;
     max-width: 500px;
     @include flex(column);
@@ -33,5 +33,10 @@
         border: 1px solid #ddd;
         border-radius: 1rem;
         outline: none;
+    }
+
+    select {
+        width: 100%;
+        padding: 0.25rem 1rem;
     }
 }
