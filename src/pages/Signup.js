@@ -24,6 +24,7 @@ const Signup = () => {
             setUser(res.data.fullname);
             setToken(res.data.token);
             localStorage.setItem("token", res.data.token);
+            axios.defaults.headers.common["x-access-token"] = res.data.token;
         } catch (error) {
             setMessage(error.response.data.message);
         }

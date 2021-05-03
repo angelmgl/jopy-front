@@ -5,12 +5,8 @@ const AddTransaction = ({ setShouldUpdate }) => {
     const date = new Date();
     const [ammount, setAmmount] = useState(0);
     const [type, setType] = useState("spends");
-    const [income_category, setIncome_category] = useState(
-        type === "spends" ? "" : "job"
-    );
-    const [spends_category, setSpends_category] = useState(
-        type === "spends" ? "food" : ""
-    );
+    const [income_category, setIncome_category] = useState("select");
+    const [spends_category, setSpends_category] = useState("select");
     const [created_at, setCreated_at] = useState(formatDate(date));
     const [message, setMessage] = useState("");
 
@@ -72,7 +68,7 @@ const AddTransaction = ({ setShouldUpdate }) => {
                 <div className="field">
                     <label htmlFor="type">Type:</label>
                     <select
-                        onChange={(e) => setType(e.target.value)}
+                        onChange={e => setType(e.target.value)}
                         value={type}
                     >
                         <option value="income">Income</option>
@@ -84,8 +80,9 @@ const AddTransaction = ({ setShouldUpdate }) => {
                     {type === "spends" ? (
                         <select
                             onChange={(e) => setSpends_category(e.target.value)}
-                            value={spends_category}
+                            value={spends_category} required
                         >
+                            <option value="select" disabled>Select</option>
                             <option value="food">Food</option>
                             <option value="transport">Transport</option>
                             <option value="fun">Fun</option>
@@ -99,8 +96,9 @@ const AddTransaction = ({ setShouldUpdate }) => {
                     ) : (
                         <select
                             onChange={(e) => setIncome_category(e.target.value)}
-                            value={income_category}
+                            value={income_category} required
                         >
+                            <option value="select" disabled>Select</option>
                             <option value="job">Job</option>
                             <option value="extra">Extra</option>
                             <option value="gift">Gift</option>

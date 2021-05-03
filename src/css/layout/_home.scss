@@ -37,3 +37,13 @@
         font-size: 3rem;
     }
 }
+
+.reload {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover {
+        color: #f0f0f0;
+    }
+}

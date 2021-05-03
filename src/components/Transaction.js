@@ -9,21 +9,23 @@ const Transaction = ({
     spends_category,
     income_category,
     created_at,
-}) => (
-    <div className={`transaction ${type}`}>
-        {type === "income" ? (
-            <p className="category">{income_category}</p>
-        ) : (
-            <p className="category">{spends_category}</p>
-        )}
-        <p>{format(created_at, "en-US")}</p>
-        <p className="ammount">
-            {type === "income" ? `+${ammount} $` : `-${ammount} $`}
-            <Link to={`/transaction/${id}`}>
-                <FaEdit className="edit-icon" />
-            </Link>
-        </p>
-    </div>
-);
+}) => {
+    return (
+        <div className={`transaction ${type}`}>
+            {type === "income" ? (
+                <p className="category">{income_category}</p>
+            ) : (
+                <p className="category">{spends_category}</p>
+            )}
+            <p>{format(created_at.slice(0, 19), "en-US")}</p>
+            <p className="ammount">
+                {type === "income" ? `+${ammount} $` : `-${ammount} $`}
+                <Link to={`/transaction/${id}`}>
+                    <FaEdit className="edit-icon" />
+                </Link>
+            </p>
+        </div>
+    );
+}
 
 export default Transaction;

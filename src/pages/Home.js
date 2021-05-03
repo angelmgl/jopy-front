@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../context/userContext";
 import axios from "axios";
+import { FaRedoAlt } from "react-icons/fa";
 import Loader from "../components/Loader";
 import Transaction from "../components/Transaction";
 import Welcome from "./Welcome";
@@ -44,6 +45,20 @@ const Home = () => {
         if (transactions.length > 0) getTotal();
     }, [transactions]);
 
+    const reload = async () => {
+        setLoadingTransactions(true);
+        try {
+            const res = await axios.get("/transactions/latest");
+            await setTransactions(res.data);
+            await setShouldUpdate(false);
+            setLoadingTransactions(false);
+        } catch (error) {
+            console.log(error.response);
+            setLoadingTransactions(false);
+            setShouldUpdate(false);
+        }
+    }
+
     if (loading) return <Loader />;
     if (!user)
         return (
@@ -65,6 +80,7 @@ const Home = () => {
                 <AddTransaction setShouldUpdate={setShouldUpdate} />
                 <div>
                     <h2>Your latest movements:</h2>
+                    <FaRedoAlt className="reload" onClick={reload} />
                     {loadingTransactions ? (
                         <Loader />
                     ) : (

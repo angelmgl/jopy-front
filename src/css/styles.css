@@ -509,6 +509,17 @@ ul {
   font-size: 3rem;
 }
 
+.reload {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.reload:hover {
+  color: #f0f0f0;
+}
+
 header .container {
   display: -webkit-box;
   display: -ms-flexbox;
