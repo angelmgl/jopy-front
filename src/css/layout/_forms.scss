@@ -27,16 +27,18 @@
         align-self: flex-start;
     }
 
-    input {
+    input, select {
         width: 100%;
         padding: 0.5rem 1rem;
         border: 1px solid #ddd;
         border-radius: 1rem;
         outline: none;
     }
+}
 
-    select {
-        width: 100%;
-        padding: 0.25rem 1rem;
-    }
+.success {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+    background-color: $incomeColor;
 }

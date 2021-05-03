@@ -69,6 +69,10 @@ ul {
     &:hover {
         background-color: darken($secondaryColor, 10);
     }
+
+    &:disabled {
+        background-color: lighten($secondaryColor, 10);
+    }
 }
 
 .btn-secondary {

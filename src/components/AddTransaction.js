@@ -1,15 +1,41 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const AddTransaction = () => {
     const date = new Date();
     const [ammount, setAmmount] = useState(0);
     const [type, setType] = useState("spends");
-    const [income_category, setIncome_category] = useState(type === "spends" ? "" : "job");
-    const [spends_category, setSpends_category] = useState(type === "spends" ? "food" : "");
+    const [income_category, setIncome_category] = useState(
+        type === "spends" ? "" : "job"
+    );
+    const [spends_category, setSpends_category] = useState(
+        type === "spends" ? "food" : ""
+    );
     const [created_at, setCreated_at] = useState(formatDate(date));
+    const [message, setMessage] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefaul();
+        e.preventDefault();
+
+        const data = {
+            ammount: parseFloat(ammount),
+            type,
+            income_category: type === "income" ? income_category : null,
+            spends_category: type === "spends" ? spends_category : null,
+            created_at,
+        };
+
+        addTransaction(data);
+    };
+
+    const addTransaction = async (data) => {
+        try {
+            const res = await axios.post("/transactions", data);
+            setMessage(res.data.message);
+            setAmmount(0);
+        } catch (error) {
+            console.log(error.response);
+        }
     };
 
     function formatDate(date) {
@@ -37,6 +63,7 @@ const AddTransaction = () => {
                         value={ammount}
                         onChange={(e) => setAmmount(e.target.value)}
                         min="0"
+                        step="0.01"
                         required
                     />
                 </div>
@@ -87,9 +114,20 @@ const AddTransaction = () => {
                         onChange={(e) => setCreated_at(e.target.value)}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">
-                    Add!
-                </button>
+                {ammount > 0 ? (
+                    <button type="submit" className="btn btn-primary">
+                        Add!
+                    </button>
+                ) : (
+                    <button type="submit" className="btn btn-primary" disabled>
+                        Add!
+                    </button>
+                )}
+                {
+                    message 
+                    ? <p className="success">{message}</p>
+                    : ""
+                }
             </form>
         </section>
     );

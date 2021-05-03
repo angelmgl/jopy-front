@@ -424,6 +424,10 @@ ul {
   background-color: #20638f;
 }
 
+.btn-primary:disabled {
+  background-color: #409ad5;
+}
+
 .btn-secondary {
   color: #2980b9;
   background-color: #fff;
@@ -599,7 +603,7 @@ nav .nav .logout:hover {
       align-self: flex-start;
 }
 
-.field input {
+.field input, .field select {
   width: 100%;
   padding: 0.5rem 1rem;
   border: 1px solid #ddd;
@@ -607,9 +611,11 @@ nav .nav .logout:hover {
   outline: none;
 }
 
-.field select {
+.success {
   width: 100%;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  background-color: #1dd1a1;
 }
 
 .loader {
