@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../context/userContext";
 import "../css/styles.css";
 import axios from "axios";
-import Loader from "./Loader";
-import Transaction from "./Transaction";
+import Loader from "../components/Loader";
+import Transaction from "../components/Transaction";
 import Welcome from "./Welcome";
-import AddTransaction from "./AddTransaction";
+import AddTransaction from "../components/AddTransaction";
 
 const Home = () => {
     const { user, loading } = useContext(UserContext);
