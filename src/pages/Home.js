@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../context/userContext";
-import "../css/styles.css";
 import axios from "axios";
 import Loader from "../components/Loader";
 import Transaction from "../components/Transaction";
