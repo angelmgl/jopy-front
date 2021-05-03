@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
 import { UserContext } from "../context/userContext";
+import logo from "../img/jopy.png";
 
 const Nav = () => {
     const { user, setUser, setToken } = useContext(UserContext);
@@ -17,7 +18,7 @@ const Nav = () => {
         <header>
             <div className="container">
                 <Link to="/">
-                    <img className="logo" src="/jopy.png" alt="logo" />
+                    <img className="logo" src={logo} alt="logo" />
                 </Link>
 
                 {user ? (

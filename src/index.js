@@ -5,7 +5,7 @@ import axios from "axios";
 import "./css/styles.css";
 
 const token = localStorage.getItem("token") || null;
-axios.defaults.baseURL = "https://jopy.herokuapp.com/apin";
+axios.defaults.baseURL = "https://jopy.herokuapp.com/api";
 if(token) axios.defaults.headers.common["x-access-token"] = token;
 
 ReactDOM.render(

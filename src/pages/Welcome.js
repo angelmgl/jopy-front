@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import img from "../img/savings.svg";
 
 const Welcome = () => (
     <>
         <div className="svg">
             <h2>Manage your budget in an easier way!</h2>
-            <img src="/img/savings.svg" alt="Savings" />
+            <img src={img} alt="Savings" />
         </div>
         <div className="buttons">
             <p>

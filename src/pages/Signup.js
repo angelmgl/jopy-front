@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../context/userContext";
-import "../css/styles.css";
+import img from "../img/signup.svg";
 
 const Signup = () => {
     const [fullname, setFullname] = useState("");
@@ -34,7 +34,7 @@ const Signup = () => {
         <section className="container grid">
             <div className="svg">
                 <h2>Sign Up for free!</h2>
-                <img src="/img/signup.svg" alt="Signup" />
+                <img src={img} alt="Signup" />
             </div>
             <form onSubmit={handleSubmit} className="form">
                 <h2>Register form</h2>
