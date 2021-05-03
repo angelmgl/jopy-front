@@ -12,21 +12,24 @@ const Home = () => {
     const [transactions, setTransactions] = useState([]);
     const [loadingTransactions, setLoadingTransactions] = useState(true);
     const [total, setTotal] = useState(0);
+    const [shouldUpdate, setShouldUpdate] = useState(false);
 
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
                 const res = await axios.get("/transactions/latest");
                 await setTransactions(res.data);
+                await setShouldUpdate(false);
                 setLoadingTransactions(false);
             } catch (error) {
                 console.log(error.response);
                 setLoadingTransactions(false);
+                setShouldUpdate(false);
             }
         };
 
-        if (user) fetchTransactions();
-    }, [user]);
+        if (user || shouldUpdate) fetchTransactions();
+    }, [user, shouldUpdate]);
 
     useEffect(() => {
         const getTotal = () => {
@@ -59,7 +62,7 @@ const Home = () => {
             </section>
 
             <div className="grid">
-                <AddTransaction />
+                <AddTransaction setShouldUpdate={setShouldUpdate} />
                 <div>
                     <h2>Your latest movements:</h2>
                     {loadingTransactions ? (

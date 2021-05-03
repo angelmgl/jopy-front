@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const AddTransaction = () => {
+const AddTransaction = ({ setShouldUpdate }) => {
     const date = new Date();
     const [ammount, setAmmount] = useState(0);
     const [type, setType] = useState("spends");
@@ -31,10 +31,12 @@ const AddTransaction = () => {
     const addTransaction = async (data) => {
         try {
             const res = await axios.post("/transactions", data);
-            setMessage(res.data.message);
-            setAmmount(0);
+            await setMessage(res.data.message);
+            await setAmmount(0);
+            await setShouldUpdate(true);
+            setTimeout(() => setMessage(""), 3000);
         } catch (error) {
-            console.log(error.response);
+            console.log(error.response.data);
         }
     };
 
